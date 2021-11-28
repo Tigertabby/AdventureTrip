@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+    font-size: 67.25%;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #410D08;
+  background-image: url("balloon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+   margin-top: 0px;
+   margin: 5px;
+   color: white;
+   font-size: 3rem;
+   text-shadow: 1px 1px 2px black;
+}
+.search-input-wrapper {
+  width: 100%;
+  height: 5rem;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.search-input-wrapper.change {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s 1s;
+}
+
+.search-input {
+  width: 50rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-input input {
+  width: 45rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.1rem solid #999;
+  font-size: 2.5rem;
+  letter-spacing: 0.15rem;
+  outline: none;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.search-input i {
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-icon {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1.7rem;
+  right: 3rem;
+  animation: searchIconAnim2 0.5s forwards;
+}
+
+.search-icon.change {
+  animation: searchIconAnim 1s forwards;
+}
+
+.search-icon i {
+  color: #999;
+  cursor: pointer;
+}
+
+@keyframes searchIconAnim {
+  0% {
+    top: 1.7rem;
+  }
+
+  40% {
+    top: 40%;
+    font-size: 25rem;
+  }
+
+  60% {
+    top: 40%;
+    right: calc(50% + 16rem);
+  }
+
+  100% {
+    top: 1.7rem;
+    right: calc(60% + 16rem);
+  }
+}
+
+@keyframes searchIconAnim2 {
+  0% {
+    right: calc(50% + 16rem);
+  }
+
+  100% {
+    right: 3rem;
+  }
+}
+

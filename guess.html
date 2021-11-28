@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+         <title>Fight through the ice.</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
+        <style>
+
+            body {
+                background-image: url("door.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                perspective: 100rem;
+
+            }
+            .numb {
+                font-size: 2rem;
+            }
+
+            button {
+                margin-bottom: 15px;
+                margin-top: 10px;
+                background-color: #4B3869;
+                color: #fff;
+
+            }
+
+            small {
+                font-size: 2rem;
+                font-family: sans-serif;
+                font-family: 'Kings', cursive;
+                font-weight: bold;
+            }
+            .container {
+              margin: 30% 60% 20% 10%;
+              background: linear-gradient(to bottom right, silver, #4B3869);
+              padding: 5px;
+              border: 2px solid black;
+              transform: rotateY(25deg);
+              font-family: 'Kings', cursive;
+            }
+            #link {
+                margin-left: 15%;
+                font-size: 1.5rem;
+
+            }
+        </style>
+    </head>
+
+    <body>
+    <div class="container">
+        <div class="message"><small>Find the code to pass the ice.</small></div>
+        <div class="game"></div>
+        <button type="button">Start</button><a id="link" href="#">this link works only when code is correct</a>
+        <div><small>Instructions: Guess the icy combination, blue means higher red means lower.  Try to solve it in as little guesses as possible.
+            <br>Then click the link.</small></div>
+        <script>
+            const gameArea = document.querySelector(".game");
+            const button = document.querySelector("button");
+            const message = document.querySelector(".message");
+            const link = document.querySelector("#link");
+            const door = document.querySelector("body");
+
+            let score = 0;
+            let gamePlay = false;
+            button.addEventListener("click", function () {
+                if (!gamePlay) {
+                    gamePlay = true;
+                    score = 0;
+                    gameArea.innerHTML = "";
+                    maker(6);
+                    message.innerHTML = "Guess the combination";
+                    button.innerHTML = "Check Code";
+                }
+                else {
+                    score++;
+                    message.innerHTML = "Guesses " + score;
+                    const numbers = document.querySelectorAll(".numb");
+                    let winCondition = 0;
+                    for (let i = 0; i < numbers.length; i++) {
+                        if (numbers[i].value == numbers[i].correct) {
+                            numbers[i].style.backgroundColor = "green";
+                            numbers[i].style.color = "white";
+                            winCondition++;
+                        }
+                        else {
+                            let color = (numbers[i].value < numbers[i].correct) ? "blue" : "red";
+                            numbers[i].style.backgroundColor = color;
+                            numbers[i].style.color = "black";
+                        }
+                        if (winCondition == numbers.length) {
+                            gameEND();
+                        }
+                    }
+                }
+            })
+
+            function gameEND() {
+                message.innerHTML = "You solved the code in  " + score + " guesses";
+                link.setAttribute('href', "reaction.html");
+                gamePlay = false;
+                button.innerHTML = "Restart Game";
+                door.style.backgroundImage = "url('opendoor1.jpg')";
+            }
+
+            function maker(num) {
+                for (let x = 0; x < num; x++) {
+                    let el = document.createElement("input");
+                    el.setAttribute("type", "number");
+                    el.max = 9;
+                    el.min = 0;
+                    el.size = 1;
+                    el.style.width = "50px";
+                    el.classList.add("numb");
+                    el.order = x;
+                    el.correct = Math.floor(Math.random() * 10);
+                    el.value = 0;
+                    gameArea.appendChild(el);
+                }
+            }
+        </script></div>
+    </body>
+
+    </html>

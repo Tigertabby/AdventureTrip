@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Trip</title>
+    <link rel="stylesheet" href="trip.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="animated-text" onclick="playSong()">Do you want to jump into the adventure? If yes, click into the blood.</h1>
+
+</div>
+    <script>
+        function playSong(){
+        const music= new Audio ("scream.mp3");
+        music.play();
+        setTimeout(function(){ music.pause(); window.open('search.html');}, 3000);
+        }
+    </script>
+  </body>
+</html>

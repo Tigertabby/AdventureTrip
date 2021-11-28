@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+h1 {
+    color: red;
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background-image: url("jump.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Creepster', cursive;
+    text-shadow: 1px 1px 2px black;
+    display: grid;
+}
+.animated-text {
+ font-family: 'Creepster', cursive;
+ overflow: hidden;
+ height:1.1em;
+ word-wrap: break-word;
+ white-space: nowrap;
+ animation: typing 4s steps(60) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 60ch;
+  }
+}
