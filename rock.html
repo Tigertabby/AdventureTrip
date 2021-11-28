@@ -73,6 +73,7 @@
             else if (result == "Dragon") {
                 result += " wins!";
                 winner[1]++;
+                playSong();
             }
             else {
                 result += " results in a tie match";
@@ -115,6 +116,11 @@
                 }
             }
         }
+
+        function playSong(){
+        const music= new Audio ("dragon.mp3");
+        music.play();
+       }
     </script>
     </body>
 
