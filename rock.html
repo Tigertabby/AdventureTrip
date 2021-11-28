@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>RockPaperScissors</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+    body {
+        background-image: url("dragon.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .container {
+          margin-top: 35%;
+          padding-left: 40%;
+          padding-right: 40%
+          width: 100%;
+          background: linear-gradient(#FFF9B6, #FDA65D);
+          font-family: 'Dela Gothic One', cursive;
+          font-size: 2rem;
+          line-height: 2.5rem;
+    }
+    button {
+          font-family: 'Dela Gothic One', cursive;
+
+    }
+    #link {
+          opacity: 0;
+          text-decoration: none;
+          color: #FF5403;
+    }
+  </style>
+    </head>
+
+    <body>
+    <div class="container">
+      <div class="score"></div>
+      <div class="message"></div>
+      <button type="button">Rock</button>
+      <button type="button">Paper</button>
+       <button type="button">Scissors</button>
+      <a id="link" href="saloon1.html">Click here to continue Adventure Trip</a>
+    </div>
+    </div>
+    <script>
+        const message = document.querySelector(".message");
+        const score = document.querySelector(".score");
+        const buttons = document.querySelectorAll("button");
+        const link = document.querySelector("#link");
+        let winner = [0, 0];
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", playGame);
+        }
+
+        function playGame(e) {
+            let playerSelection = e.target.innerText;
+            let computerSelection = Math.random();
+            if (computerSelection < 0.34) {
+                computerSelection = "Rock";
+            }
+            else if (computerSelection <= 0.67) {
+                computerSelection = "Paper";
+            }
+            else {
+                computerSelection = "Scissors";
+            }
+            let result = checkWinner(playerSelection, computerSelection);
+            if (result == "Player") {
+                result += " wins!";
+                winner[0]++;
+            }
+            else if (result == "Dragon") {
+                result += " wins!";
+                winner[1]++;
+            }
+            else {
+                result += " results in a tie match";
+            }
+            score.innerHTML = "<small>Player</small>[" + winner[0] + "] <small>Dragon</small>[" + winner[1] + "]";
+            messager(playerSelection + " vs " + computerSelection + "<br><b>" + result + "</b>");
+            if (winner[0] > 9) {link.style.opacity = 1; }
+        }
+
+        function messager(mes) {
+            message.innerHTML = mes;
+        }
+
+        function checkWinner(pl, co) {
+            if (pl === co) {
+                return "Draw";
+            }
+            if (pl === "Rock") {
+                if (co === "Paper") {
+                    return "Dragon";
+                }
+                else {
+                    return "Player";
+                }
+            }
+            if (pl === "Paper") {
+                if (co === "Scissors") {
+                    return "Dragon";
+                }
+                else {
+                    return "Player";
+                }
+            }
+            if (pl === "Scissors") {
+                if (co === "Rock") {
+                    return "Dragon";
+                }
+                else {
+                    return "Player";
+                }
+            }
+        }
+    </script>
+    </body>
+
+    </html>
+
