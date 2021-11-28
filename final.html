@@ -21,6 +21,7 @@
       padding: 5px;
       border: 1px solid #eee;
       display: none;
+
     }
 
     .main .active .abody {
@@ -42,11 +43,23 @@
       width: 100%;
       height: 70vh;
     }
+   #my_audio {
+            opacity: 1;
+   }
+  .sound {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            background-color:  #333;
+            display: block;
+            color: white;
+   }
   </style>
 </head>
 
 <body>
   <div class='main'>
+
         <div class='panel'>
       <div class='ahead'>Click here to leave your glass border</div>
        <div class='abody'><img class="image" src="fish.jpg" alt=""></div>
@@ -72,8 +85,10 @@
       <div class='abody'><img class="image" src="castlefinal.jpg" alt=""></div>
     </div>
   </div>
+
   <div class="bye">Enjoy your future!</div>
   <script>
+     const music= new Audio ("guitar.mp3");
     const accordion = document.querySelectorAll('.panel');
     //console.log(accordion);
     accordion.forEach(function (ele) {
@@ -86,12 +101,21 @@
       accordion.forEach(function (ele) {
         if (e.target.parentElement === ele) {
           ele.classList.toggle('active');
+          playSong();
         }
         else {
           ele.classList.remove('active');
+          pauseAudio(); 
         }
       })
     }
+
+ function playSong(){
+    music.play();
+  }
+function pauseAudio() {
+  music.pause();
+}
   </script>
 </body>
 </html>
