@@ -54,6 +54,7 @@
                 gameplay.innerHTML = "";
                 makeCard(myCard);
                 toggleButtons();
+                playSong();
                 return;
             }
           
@@ -120,6 +121,10 @@
             div.appendChild(span2);
             gameplay.appendChild(div);
         }
+         function playSong(){
+        const music= new Audio ("pub.mp3");
+        music.play();
+       }
     </script>
 </body>
 
