@@ -73,6 +73,7 @@
                     button.style.display = "none";
                     messager("Click the circles as quickly as you see them - react in less than 0.5 sec!");
                     playArea.timer = setTimeout(myBox,rand(3000));
+                    playSong();
                 }
             })
 
@@ -119,6 +120,10 @@
             function messager(mes) {
                 message.innerHTML = mes;
             }
+        function playSong(){
+        const music= new Audio ("reaction.mp3");
+        music.play();
+       }
         </script>
 </body>
 </html>
