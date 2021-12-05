@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
 * {
    margin: 0;
    padding: 0;
@@ -17,14 +17,14 @@ h1 {
     background-image: url("jump.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Creepster', cursive;
+    font-family:'Nosifer', cursive;
     text-shadow: 1px 1px 2px black;
     display: grid;
 }
 .animated-text {
- font-family: 'Creepster', cursive;
+ font-family: 'Nosifer', cursive;
  overflow: hidden;
- height:1.1em;
+ height:2.5em;
  word-wrap: break-word;
  white-space: nowrap;
  animation: typing 4s steps(60) forwards;
