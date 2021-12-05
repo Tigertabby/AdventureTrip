@@ -78,7 +78,7 @@
             else {
                 result += " results in a tie match";
             }
-            score.innerHTML = "<small>Player</small>[" + winner[0] + "] <small>Dragon</small>[" + winner[1] + "]";
+            score.innerHTML = "<small>Player</small>[" + winner[0] + "] <small>Dragon</small>[" + winner[1] + "] <small>You need 10 points to continue</small>";
             messager(playerSelection + " vs " + computerSelection + "<br><b>" + result + "</b>");
             if (winner[0] > 9) {link.style.opacity = 1; }
         }
