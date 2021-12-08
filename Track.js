@@ -3,8 +3,6 @@ const TRACK_H = 40;
 const TRACK_GAP = 2;
 const TRACK_COLS = 20;
 const TRACK_ROWS = 15;
-
-
 var levelOne = [4, 4, 4, 6, 1, 1, 6, 1, 1, 1, 1, 7, 1, 1, 1, 7, 1, 1, 1, 4,
 				 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
 				 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6,
@@ -51,9 +49,8 @@ function carTrackHandling(whichCar) {
 		var tileHere = returnTileTypeAtColRow( carTrackCol,carTrackRow );
 
 		if(tileHere == TRACK_GOAL) {
-		     window.open("fight1.html", '_blank').focus();
-
-
+			window.location.href = "fight1.html";
+			loadLevel(levelOne);
 		} else if(tileHere != TRACK_ROAD) {
 			// next two lines added to fix a bug, mentioned in video 9.6
 			// undoes the car movement which got it onto the wall

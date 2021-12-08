@@ -40,6 +40,6 @@ function moveAll() {
 
 function drawAll() {
 	drawTracks();
-	yellowCar.draw();
+	blueCar.draw();
 	greenCar.draw();
 } 
