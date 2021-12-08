@@ -14,7 +14,7 @@ function countLoadedImagesAndLaunchIfReady() {
 
 function beginLoadingImage(imgVar, fileName) {
 	imgVar.onload = countLoadedImagesAndLaunchIfReady;
-	imgVar.src = "images/"+fileName;
+	imgVar.src = ""+fileName;
 }
 
 function loadImageForTrackCode(trackCode, fileName) {
