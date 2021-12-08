@@ -24,7 +24,7 @@ h1 {
 .animated-text {
  font-family: 'Nosifer', cursive;
  overflow: hidden;
- height:2.5em;
+ height:1.5em;
  word-wrap: break-word;
  white-space: nowrap;
  animation: typing 4s steps(60) forwards;
